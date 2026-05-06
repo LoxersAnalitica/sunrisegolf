@@ -217,6 +217,11 @@ function Hero() {
 
     setStatus('submitting')
 
+    // Fire Meta Pixel Lead event immediately on form submission
+    if (window.fbq) {
+      window.fbq('track', 'Lead');
+    }
+
     try {
       const response = await fetch('/api/kommo', {
         method: 'POST',
@@ -232,9 +237,6 @@ function Hero() {
 
       if (response.ok) {
         setStatus('success')
-        if (window.fbq) {
-          window.fbq('track', 'Lead');
-        }
       } else {
         setStatus('error')
       }
@@ -725,6 +727,11 @@ function DossierModal({ isOpen, onClose }) {
 
     setStatus('submitting')
 
+    // Fire Meta Pixel Lead event immediately on form submission
+    if (window.fbq) {
+      window.fbq('track', 'Lead');
+    }
+
     try {
       const response = await fetch('/api/kommo', {
         method: 'POST',
@@ -740,9 +747,6 @@ function DossierModal({ isOpen, onClose }) {
 
       if (response.ok) {
         setStatus('success')
-        if (window.fbq) {
-          window.fbq('track', 'Lead');
-        }
         setTimeout(() => {
           onClose()
           setStatus('idle')
