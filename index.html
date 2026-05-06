@@ -10,8 +10,20 @@
       'ad_storage': 'denied',
       'ad_user_data': 'denied',
       'ad_personalization': 'denied',
-      'analytics_storage': 'denied'
+      'analytics_storage': 'denied',
+      'wait_for_update': 500
     });
+
+    // If user previously accepted cookies, update consent immediately
+    // (before GTM fires, so it picks up the granted status)
+    if (document.cookie.indexOf('sunrise-cookie-consent=true') !== -1) {
+      gtag('consent', 'update', {
+        'ad_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'analytics_storage': 'granted'
+      });
+    }
   </script>
 
   <!-- Google Tag Manager -->
