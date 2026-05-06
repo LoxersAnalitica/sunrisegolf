@@ -2,6 +2,30 @@
 <html lang="en">
 
 <head>
+  <!-- Google Consent Mode v2 Default -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'wait_for_update': 500
+    });
+
+    // If user previously accepted cookies, update consent immediately
+    // (before GTM fires, so it picks up the granted status)
+    if (document.cookie.indexOf('sunrise-cookie-consent=true') !== -1) {
+      gtag('consent', 'update', {
+        'ad_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'analytics_storage': 'granted'
+      });
+    }
+  </script>
+
   <!-- Google Tag Manager -->
   <script>(function (w, d, s, l, i) {
       w[l] = w[l] || []; w[l].push({
@@ -10,16 +34,44 @@
       }); var f = d.getElementsByTagName(s)[0],
         j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
           'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-WHFFNQGW');</script>
+    })(window, document, 'script', 'dataLayer', 'GTM-5TK32SPJ');</script>
   <!-- End Google Tag Manager -->
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17420641796"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'AW-17420641796');
+  </script>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2463715127334679');
+    fbq('track', 'PageView');
+  </script>
+  <!-- End Meta Pixel Code -->
 
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml"
-    href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23FFFFFF"/><text x="50" y="65" font-family="serif" font-size="50" fill="%23C5A880" text-anchor="middle" font-weight="bold">AT</text></svg>' />
+    href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23FFFFFF"/><text x="50" y="65" font-family="serif" font-size="50" fill="%23C5A880" text-anchor="middle" font-weight="bold">SG</text></svg>' />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Atanaus Suites - Los Cristianos</title>
+  <title>Sunrise Golf Residences - La Cala de Mijas</title>
   <meta name="description"
-    content="Exclusivity and Comfort by the Sea. Your new home in the south of Tenerife, just 600 meters from the promenade." />
+    content="Luxury frontline golf residences in La Cala de Mijas. Contemporary 2 and 3-bedroom homes with panoramic sea and mountain views on the Costa del Sol." />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,15 +79,19 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
     rel="stylesheet">
-  <script type="module" crossorigin src="/assets/index-D043ctPy.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-zV2mFz-V.css">
+  <script type="module" crossorigin src="/assets/index-DlQ7JDmQ.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-DOCY0H_C.css">
 </head>
 
 <body>
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHFFNQGW" height="0" width="0"
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5TK32SPJ" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Meta Pixel (noscript fallback) -->
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=2463715127334679&ev=PageView&noscript=1" /></noscript>
 
   <div id="root"></div>
 </body>
