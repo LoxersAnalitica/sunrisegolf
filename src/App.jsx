@@ -217,7 +217,7 @@ function Hero() {
 
     setStatus('submitting')
 
-    // Fire Meta Pixel Lead event immediately on form submission
+    // Fire Meta Pixel Lead event
     if (window.fbq) {
       window.fbq('track', 'Lead');
     }
@@ -727,7 +727,7 @@ function DossierModal({ isOpen, onClose }) {
 
     setStatus('submitting')
 
-    // Fire Meta Pixel Lead event immediately on form submission
+    // Fire Meta Pixel Lead event
     if (window.fbq) {
       window.fbq('track', 'Lead');
     }
@@ -855,7 +855,8 @@ export default function App() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname)
   const [isDossierOpen, setIsDossierOpen] = useState(false)
 
-  const grantGoogleConsent = () => {
+  const grantConsent = () => {
+    // Grant Google consent
     if (typeof window !== "undefined" && window.gtag) {
       window.gtag('consent', 'update', {
         'ad_storage': 'granted',
@@ -864,11 +865,15 @@ export default function App() {
         'analytics_storage': 'granted'
       });
     }
+    // Grant Meta Pixel consent
+    if (typeof window !== "undefined" && window.fbq) {
+      window.fbq('consent', 'grant');
+    }
   }
 
   useEffect(() => {
     if (getCookieConsentValue("sunrise-cookie-consent") === "true") {
-      grantGoogleConsent();
+      grantConsent();
     }
 
     const handleLocationChange = () => setCurrentPath(window.location.pathname)
@@ -895,7 +900,7 @@ export default function App() {
         location="bottom"
         buttonText="I Understand"
         cookieName="sunrise-cookie-consent"
-        onAccept={grantGoogleConsent}
+        onAccept={grantConsent}
         style={{ background: "#272522", color: "#F9F8F6", fontFamily: "var(--font-sans)", fontSize: "14px" }}
         buttonStyle={{ backgroundColor: "#C5A880", color: "#fff", fontSize: "12px", borderRadius: "2px", fontWeight: "bold", textTransform: "uppercase", padding: "10px 20px" }}
         expires={150}

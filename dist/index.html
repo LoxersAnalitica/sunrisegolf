@@ -60,6 +60,14 @@
       s.parentNode.insertBefore(t, s)
     }(window, document, 'script',
       'https://connect.facebook.net/en_US/fbevents.js');
+
+    // Respect cookie consent for Meta Pixel
+    if (document.cookie.indexOf('sunrise-cookie-consent=true') !== -1) {
+      fbq('consent', 'grant');
+    } else {
+      fbq('consent', 'revoke');
+    }
+
     fbq('init', '2463715127334679');
     fbq('track', 'PageView');
   </script>
@@ -79,7 +87,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
     rel="stylesheet">
-  <script type="module" crossorigin src="/assets/index-DlQ7JDmQ.js"></script>
+  <script type="module" crossorigin src="/assets/index-BWylJV1F.js"></script>
   <link rel="stylesheet" crossorigin href="/assets/index-DOCY0H_C.css">
 </head>
 

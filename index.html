@@ -60,6 +60,14 @@
       s.parentNode.insertBefore(t, s)
     }(window, document, 'script',
       'https://connect.facebook.net/en_US/fbevents.js');
+
+    // Respect cookie consent for Meta Pixel
+    if (document.cookie.indexOf('sunrise-cookie-consent=true') !== -1) {
+      fbq('consent', 'grant');
+    } else {
+      fbq('consent', 'revoke');
+    }
+
     fbq('init', '2463715127334679');
     fbq('track', 'PageView');
   </script>
