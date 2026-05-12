@@ -856,7 +856,6 @@ export default function App() {
   const [isDossierOpen, setIsDossierOpen] = useState(false)
 
   const grantConsent = () => {
-    // Grant Google consent
     if (typeof window !== "undefined" && window.gtag) {
       window.gtag('consent', 'update', {
         'ad_storage': 'granted',
@@ -864,10 +863,6 @@ export default function App() {
         'ad_personalization': 'granted',
         'analytics_storage': 'granted'
       });
-    }
-    // Grant Meta Pixel consent
-    if (typeof window !== "undefined" && window.fbq) {
-      window.fbq('consent', 'grant');
     }
   }
 
